@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: localhost
+    database_port: null
+    database_name: meritas_altertools
+    database_user: root
+    database_password: 123
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: e45b030a186ac20431d20d16d6a1804fc8ec1fb8

@@ -1,0 +1,23 @@
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#character-sheet-form{
+    width: 30%;
+    margin-top: 45px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+#character-sheet-form label{
+    text-align: left;
+}
+
+/*
+*Not Working!*/
+#user-register-form label{
+    display: inline;
+    text-align: left;
+    float: left;
+}

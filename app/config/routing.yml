@@ -1,0 +1,15 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+index:
+    pattern:  /
+    defaults: { _controller: AlterdBundle:CharacterSheet:index }
+
+update_sheet:
+    pattern:  /sheet/update
+    defaults: { _controller: AlterdBundle:CharacterSheet:update }
+
+generate_sheet:
+    pattern:  /sheet/generate
+    defaults: { _controller: AlterdBundle:CharacterSheet:generate }
