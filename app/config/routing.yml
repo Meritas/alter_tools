@@ -6,6 +6,10 @@ index:
     pattern:  /
     defaults: { _controller: AlterdBundle:CharacterSheet:index }
 
+list_sheet:
+    pattern:  /sheet/list
+    defaults: { _controller: AlterdBundle:CharacterSheet:fetchAll }
+
 update_sheet:
     pattern:  /sheet/update
     defaults: { _controller: AlterdBundle:CharacterSheet:update }
