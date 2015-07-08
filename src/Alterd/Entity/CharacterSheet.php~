@@ -380,7 +380,7 @@ class CharacterSheet
             'character_wp'=>            $this->characterWp,
             'character_skills'=>        $this->characterSkills,
             'character_abilities'=>     $this->characterAbilities,
-            'character_experience'=>    $this->characterExp,
+            'character_exp'=>           $this->characterExp,
             'character_stat_points'=>   $this->characterStatPoints,
             'character_skill_points'=>   $this->characterSkillPoints,
             'character_money'=>         $this->characterMoney,

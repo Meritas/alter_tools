@@ -15,7 +15,10 @@ class appProdUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerat
     private static $declaredRoutes = array(
         'homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/app/example',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'index' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Alterd\\Controller\\CharacterSheetController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'list_sheet' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Alterd\\Controller\\CharacterSheetController::fetchAllAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/sheet/list',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'update_sheet' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Alterd\\Controller\\CharacterSheetController::updateAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/sheet/update',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'generate_sheet' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Alterd\\Controller\\CharacterSheetController::generateAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/sheet/generate',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'view_sheet' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Alterd\\Controller\\CharacterSheetController::viewAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/sheet/view',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
 
     /**

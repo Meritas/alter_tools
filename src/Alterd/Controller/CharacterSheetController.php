@@ -41,13 +41,21 @@ class CharacterSheetController extends Controller {
 
         $characterSheet = new CharacterSheet();
 
+        $characterSheet->setUid($postData['uid']);
         $characterSheet->setCharacterName($postData['character_name']);
         $characterSheet->setCharacterHp($postData['character_hp']);
         $characterSheet->setCharacterEn($postData['character_en']);
+        $characterSheet->setCharacterRace($postData['character_race']);
+        $characterSheet->setCharacterLevel($postData['character_level']);
+        $characterSheet->setCharacterSkillPoints($postData['character_skill_points']);
+        $characterSheet->setCharacterStatPoints($postData['character_stat_points']);
+        $characterSheet->setCharacterSkills($postData['character_skills']);
+        $characterSheet->setCharacterAbilities($postData['character_abilities']);
         $characterSheet->setCharacterStr($postData['character_str']);
         $characterSheet->setCharacterAgi($postData['character_agi']);
         $characterSheet->setCharacterSpd($postData['character_spd']);
         $characterSheet->setCharacterWp($postData['character_wp']);
+        $characterSheet->setCharacterExp($postData['character_experience']);
         $characterSheet->setCharacterMoney($postData['character_money']);
         $characterSheet->setCharacterInventory($postData['character_inventory']);
         $characterSheet->setCharacterInfo($postData['character_info']);

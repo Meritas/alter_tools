@@ -41,9 +41,27 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'Alterd\\Controller\\CharacterSheetController::indexAction',  '_route' => 'index',);
         }
 
-        // update_sheet
-        if ($pathinfo === '/sheet/update') {
-            return array (  '_controller' => 'Alterd\\Controller\\CharacterSheetController::updateAction',  '_route' => 'update_sheet',);
+        if (0 === strpos($pathinfo, '/sheet')) {
+            // list_sheet
+            if ($pathinfo === '/sheet/list') {
+                return array (  '_controller' => 'Alterd\\Controller\\CharacterSheetController::fetchAllAction',  '_route' => 'list_sheet',);
+            }
+
+            // update_sheet
+            if ($pathinfo === '/sheet/update') {
+                return array (  '_controller' => 'Alterd\\Controller\\CharacterSheetController::updateAction',  '_route' => 'update_sheet',);
+            }
+
+            // generate_sheet
+            if ($pathinfo === '/sheet/generate') {
+                return array (  '_controller' => 'Alterd\\Controller\\CharacterSheetController::generateAction',  '_route' => 'generate_sheet',);
+            }
+
+            // view_sheet
+            if ($pathinfo === '/sheet/view') {
+                return array (  '_controller' => 'Alterd\\Controller\\CharacterSheetController::viewAction',  '_route' => 'view_sheet',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

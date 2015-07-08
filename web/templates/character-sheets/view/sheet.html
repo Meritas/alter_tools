@@ -1,4 +1,4 @@
-<form class="form-horizontal form-xl" name="registerForm" id="character-sheet-form" ng-submit="formSubmit()">
+<form class="form-horizontal form-xl" name="registerForm" id="character-sheet-form" ng-submit="formSubmit()" style="width: 500px;">
     <div class="form-group">
         <label class="col-sm-4 control-label">Character Name</label>
         <div class="col-sm-6">
@@ -15,6 +15,30 @@
         <label class="col-sm-4 control-label">Energy Points</label>
         <div class="col-sm-3">
             <span class="form-control">{{formData.character_hp}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="character-race-field" class="col-sm-4 control-label">Race</label>
+        <div class="col-sm-3">
+            <span class="form-control">{{racesList[formData.character_race]}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="character-level-field" class="col-sm-4 control-label">Level</label>
+        <div class="col-sm-3">
+            <span class="form-control">{{formData.character_level}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="character-skills-field" class="col-sm-4 control-label">Skills</label>
+        <div class="col-sm-3">
+            <span class="form-control">{{formData.character_skills}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="character-abilitites-field" class="col-sm-4 control-label">Abilities</label>
+        <div class="col-sm-7">
+            <span class="form-control" style="height: 80px; overflow-y: auto; text-align: left;">{{formData.character_abilities}}</span>
         </div>
     </div>
     <div class="form-group">
@@ -39,6 +63,23 @@
         <label class="col-sm-4 control-label">Willpower</label>
         <div class="col-sm-3">
             <span class="form-control">{{formData.character_wp}}</span>
+        </div>
+    </div><div class="form-group">
+        <label for="stat-points-field" class="col-sm-4 control-label">Stat Points</label>
+        <div class="col-sm-3">
+            <span class="form-control">{{formData.character_stat_points}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="skill-points-field" class="col-sm-4 control-label">Skill Points</label>
+        <div class="col-sm-3">
+            <span class="form-control">{{formData.character_skill_points}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="experience-field" class="col-sm-4 control-label">Experience</label>
+        <div class="col-sm-3">
+            <span class="form-control">{{formData.character_experience}}</span>
         </div>
     </div>
     <div class="form-group">

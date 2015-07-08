@@ -64,10 +64,10 @@ class CharacterSheet extends \Alterd\Entity\CharacterSheet implements \Doctrine\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'id', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterName', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterHp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterEn', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterStr', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterAgi', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterSpd', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterWp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterMoney', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterInventory', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterInfo');
+            return array('__isInitialized__', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'id', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'uid', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterName', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterLevel', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterRace', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterSkills', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterAbilities', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterStatPoints', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterSkillPoints', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterHp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterEn', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterStr', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterAgi', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterSpd', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterWp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterExp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterMoney', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterInventory', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterInfo');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'id', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterName', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterHp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterEn', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterStr', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterAgi', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterSpd', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterWp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterMoney', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterInventory', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterInfo');
+        return array('__isInitialized__', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'id', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'uid', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterName', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterLevel', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterRace', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterSkills', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterAbilities', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterStatPoints', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterSkillPoints', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterHp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterEn', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterStr', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterAgi', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterSpd', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterWp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterExp', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterMoney', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterInventory', '' . "\0" . 'Alterd\\Entity\\CharacterSheet' . "\0" . 'characterInfo');
     }
 
     /**
@@ -406,6 +406,193 @@ class CharacterSheet extends \Alterd\Entity\CharacterSheet implements \Doctrine\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCharacterInfo', array());
 
         return parent::getCharacterInfo();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFields()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFields', array());
+
+        return parent::getFields();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUid($uid)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUid', array($uid));
+
+        return parent::setUid($uid);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUid()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUid', array());
+
+        return parent::getUid();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCharacterRace($characterRace)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCharacterRace', array($characterRace));
+
+        return parent::setCharacterRace($characterRace);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCharacterRace()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCharacterRace', array());
+
+        return parent::getCharacterRace();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCharacterSkills($characterSkills)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCharacterSkills', array($characterSkills));
+
+        return parent::setCharacterSkills($characterSkills);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCharacterSkills()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCharacterSkills', array());
+
+        return parent::getCharacterSkills();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCharacterAbilities($characterAbilities)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCharacterAbilities', array($characterAbilities));
+
+        return parent::setCharacterAbilities($characterAbilities);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCharacterAbilities()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCharacterAbilities', array());
+
+        return parent::getCharacterAbilities();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCharacterStatPoints($characterStatPoints)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCharacterStatPoints', array($characterStatPoints));
+
+        return parent::setCharacterStatPoints($characterStatPoints);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCharacterStatPoints()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCharacterStatPoints', array());
+
+        return parent::getCharacterStatPoints();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCharacterSkillPoints($characterSkillPoints)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCharacterSkillPoints', array($characterSkillPoints));
+
+        return parent::setCharacterSkillPoints($characterSkillPoints);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCharacterSkillPoints()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCharacterSkillPoints', array());
+
+        return parent::getCharacterSkillPoints();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCharacterLevel($characterLevel)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCharacterLevel', array($characterLevel));
+
+        return parent::setCharacterLevel($characterLevel);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCharacterLevel()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCharacterLevel', array());
+
+        return parent::getCharacterLevel();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCharacterExp($characterExp)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCharacterExp', array($characterExp));
+
+        return parent::setCharacterExp($characterExp);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCharacterExp()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCharacterExp', array());
+
+        return parent::getCharacterExp();
     }
 
 }

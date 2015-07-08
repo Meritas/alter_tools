@@ -8,6 +8,10 @@ angular.module('app').controller('indexController', ['$scope','$http',
 angular.module('app').controller('viewCharacterSheetController', ['$scope','$http','$location',
     function($scope, $http, $location){
         var self = this;
+        
+        $scope.racesList = {
+            8: '???'
+        };
 
         var getParams = $location.search();
 
