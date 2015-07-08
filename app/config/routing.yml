@@ -17,3 +17,7 @@ update_sheet:
 generate_sheet:
     pattern:  /sheet/generate
     defaults: { _controller: AlterdBundle:CharacterSheet:generate }
+
+view_sheet:
+    pattern:  /sheet/view
+    defaults: { _controller: AlterdBundle:CharacterSheet:view }
