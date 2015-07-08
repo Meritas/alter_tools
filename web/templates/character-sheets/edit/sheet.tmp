@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="str-field" class="col-sm-4 control-label">Money</label>
+        <label for="money-field" class="col-sm-4 control-label">Money</label>
         <div class="col-sm-3">
             <input type="text" ng-model="formData.character_money" name="characterMoney" id="money-field" class="form-control">
         </div>

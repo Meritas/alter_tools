@@ -3,10 +3,12 @@
 namespace Alterd\Controller;
 
 use Alterd\Entity\CharacterSheet;
+use Doctrine\ORM\Query;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class CharacterSheetController extends Controller {
     /**
@@ -17,26 +19,62 @@ class CharacterSheetController extends Controller {
         return $this->render('default/index.html.twig', array());
     }
 
-    public function generateAction(){
-        $userEntity = new User();
+    public function fetchAllAction(){
+        $characterSheet = new CharacterSheet();
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AlterdBundle:CharacterSheet');
+        $sheets = $repository->findAll();
+        return new JsonResponse(
+            array_map(array($this, 'all'), $sheets)
+        );
+    }
+
+    public function generateAction(Request $request){
+        if($request->getMethod() == 'POST'){
+
+            $postData = json_decode($request->request->get('post'), true);
+        }
+        else{
+            return new Response('No data');
+        }
 
         $characterSheet = new CharacterSheet();
 
-        $characterSheet->setCharacterName('Dummy Character');
-        $characterSheet->setCharacterHp(100);
-        $characterSheet->setCharacterEn(100);
-        $characterSheet->setCharacterStr(10);
-        $characterSheet->setCharacterAgi(10);
-        $characterSheet->setCharacterSpd(10);
-        $characterSheet->setCharacterWp(10);
-        $characterSheet->setCharacterMoney(500);
-        $characterSheet->setCharacterInventory('Empty');
-        $characterSheet->setCharacterInfo('');
+        $characterSheet->setCharacterName($postData['character_name']);
+        $characterSheet->setCharacterHp($postData['character_hp']);
+        $characterSheet->setCharacterEn($postData['character_en']);
+        $characterSheet->setCharacterStr($postData['character_str']);
+        $characterSheet->setCharacterAgi($postData['character_agi']);
+        $characterSheet->setCharacterSpd($postData['character_spd']);
+        $characterSheet->setCharacterWp($postData['character_wp']);
+        $characterSheet->setCharacterMoney($postData['character_money']);
+        $characterSheet->setCharacterInventory($postData['character_inventory']);
+        $characterSheet->setCharacterInfo($postData['character_info']);
 
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($characterSheet);
         $em->flush();
+
+        return new JsonResponse('Character Sheet Generated Successfully');
+    }
+
+    public function viewAction(Request $request){
+        if($request->getMethod() == 'POST'){
+            $getData = json_decode($request->request->get('post'), true);
+
+            $repository = $this->getDoctrine()
+                ->getRepository('AlterdBundle:CharacterSheet');
+
+            $sheet = $repository->findOneByUid(intval($getData['uid']));
+        }
+        else{
+            return new Response('No data');
+        }
+
+        return new JsonResponse($sheet->getFields());
+
     }
 
     public function editAction(){
@@ -53,5 +91,9 @@ class CharacterSheetController extends Controller {
         else{
             return new Response('No data');
         }
+    }
+
+    public function all($fields){
+        return $fields->getFields();
     }
 }

@@ -18,8 +18,8 @@ angular.module('app', ['ui.router','ngMessages']).config(['$stateProvider', '$ur
                     controller: 'controller as headerController'
                 },*/
                 'main':{
-                    templateUrl: TMP_PATH + 'character-sheets/index.html',
-                    controller: 'indexController as indexController'
+                    templateUrl: TMP_PATH + 'character-sheets/list/sheets.html',
+                    controller: 'listCharacterSheetsController as listController'
                 }/*,
                 'footer':{
                     templateUrl: '',
@@ -28,11 +28,20 @@ angular.module('app', ['ui.router','ngMessages']).config(['$stateProvider', '$ur
             }
         })
         .state('index.generate', {
-            url: 'edit',
+            url: 'generate',
             views: {
                 'main@':{
-                    templateUrl: TMP_PATH + 'character-sheets/edit/sheet.tmp',
-                    controller: 'editCharacterSheetController as editController'
+                    templateUrl: TMP_PATH + 'character-sheets/generate/sheet.html',
+                    controller: 'generateCharacterSheetController as generateController'
+                }
+            }
+        }).
+        state('index.view', {
+            url: 'view',
+            views: {
+                'main@':{
+                    templateUrl: TMP_PATH + 'character-sheets/view/sheet.html',
+                    controller: 'viewCharacterSheetController as viewController'
                 }
             }
         }).
@@ -40,11 +49,21 @@ angular.module('app', ['ui.router','ngMessages']).config(['$stateProvider', '$ur
             url: 'edit',
             views: {
                 'main@':{
-                    templateUrl: TMP_PATH + 'character-sheets/edit/sheet.tmp',
+                    templateUrl: TMP_PATH + 'character-sheets/edit/sheet.html',
                     controller: 'editCharacterSheetController as editController'
                 }
             }
+        }).
+        state('index.list', {
+            url: 'list',
+            views: {
+                'main@':{
+                    templateUrl: TMP_PATH + 'character-sheets/list/sheets.html',
+                    controller: 'listCharacterSheetsController as listController'
+                }
+            }
         })
+
         /*state('index.registration', {
             url: 'register',
             views: {

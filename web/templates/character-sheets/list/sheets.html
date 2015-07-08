@@ -1,0 +1,13 @@
+<div ng-repeat="sheet in sheets">
+    <!--<p>
+        <span style="font-weight: bolder;">character_name:</span>
+        <span>{{sheet.character_name}}</span>
+    </p>
+    <p ng-repeat="(field,value) in sheet" ng-if="field!='character_name'">
+        <span style="font-weight: bolder;">{{field}}: </span>
+        <span>{{value}}</span>
+    </p>-->
+    <a ng-href="#/view?uid={{sheet.uid}}">{{sheet.character_name}}</a>
+    <hr>
+</div>
+
