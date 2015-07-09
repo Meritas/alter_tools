@@ -71,7 +71,6 @@ class CharacterSheetController extends Controller {
     public function viewAction(Request $request){
         if($request->getMethod() == 'POST'){
             $getData = json_decode($request->request->get('post'), true);
-
             $repository = $this->getDoctrine()
                 ->getRepository('AlterdBundle:CharacterSheet');
 

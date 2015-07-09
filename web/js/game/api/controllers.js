@@ -8,10 +8,21 @@ angular.module('app').controller('indexController', ['$scope','$http',
 angular.module('app').controller('viewCharacterSheetController', ['$scope','$http','$location',
     function($scope, $http, $location){
         var self = this;
-        
-        $scope.racesList = {
-            8: '???'
+
+        $scope.classesList = {
+            1:  'Human',
+            2:  'Regenerator',
+            3:  'Aberrant',
+            4:  'Magician',
+            5:  'Alchemist',
+            6:  'Exorcist',
+            7:  'Ki-Fighter',
+            8:  '???',
+            9:  'Hybrid',
+            10: 'Contractor'
         };
+
+        $scope.classes = objectToArray($scope.classesList);
 
         var getParams = $location.search();
 
@@ -36,6 +47,8 @@ angular.module('app').controller('editCharacterSheetController', ['$scope','$htt
 angular.module('app').controller('generateCharacterSheetController', ['$scope','$http',
     function($scope , $http){
         var self = this;
+
+        $scope.classesList = cloneObject(CLASSES_LIST);
 
         $scope.response = '';
 
