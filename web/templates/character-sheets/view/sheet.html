@@ -18,25 +18,25 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="character-race-field" class="col-sm-4 control-label">Race</label>
+        <label class="col-sm-4 control-label">Race</label>
         <div class="col-sm-3">
             <span class="form-control">{{racesList[formData.character_race]}}</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="character-level-field" class="col-sm-4 control-label">Level</label>
+        <label class="col-sm-4 control-label">Level</label>
         <div class="col-sm-3">
             <span class="form-control">{{formData.character_level}}</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="character-skills-field" class="col-sm-4 control-label">Skills</label>
-        <div class="col-sm-3">
-            <span class="form-control">{{formData.character_skills}}</span>
+        <label class="col-sm-4 control-label">Skills</label>
+        <div class="col-sm-7">
+            <span class="form-control" style="height: 80px; overflow-y: auto; text-align: left;">{{formData.character_skills}}</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="character-abilitites-field" class="col-sm-4 control-label">Abilities</label>
+        <label class="col-sm-4 control-label">Abilities</label>
         <div class="col-sm-7">
             <span class="form-control" style="height: 80px; overflow-y: auto; text-align: left;">{{formData.character_abilities}}</span>
         </div>
@@ -65,19 +65,19 @@
             <span class="form-control">{{formData.character_wp}}</span>
         </div>
     </div><div class="form-group">
-        <label for="stat-points-field" class="col-sm-4 control-label">Stat Points</label>
+        <label class="col-sm-4 control-label">Stat Points</label>
         <div class="col-sm-3">
             <span class="form-control">{{formData.character_stat_points}}</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="skill-points-field" class="col-sm-4 control-label">Skill Points</label>
+        <label class="col-sm-4 control-label">Skill Points</label>
         <div class="col-sm-3">
             <span class="form-control">{{formData.character_skill_points}}</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="experience-field" class="col-sm-4 control-label">Experience</label>
+        <label class="col-sm-4 control-label">Experience</label>
         <div class="col-sm-3">
             <span class="form-control">{{formData.character_experience}}</span>
         </div>
@@ -98,12 +98,6 @@
         <label class="col-sm-4 control-label">Information</label>
         <div class="col-sm-7">
             <span class="form-control" style="height: 150px; overflow-y: auto; text-align: left;">{{formData.character_info}}</span>
-        </div>
-    </div>
-
-    <div class="form-group" >
-        <div class="col-sm-offset-4 col-sm-3">
-            <button type="submit" class="btn btn-default">Update</button>
         </div>
     </div>
 </form>

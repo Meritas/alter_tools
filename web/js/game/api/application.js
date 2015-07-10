@@ -49,7 +49,7 @@ angular.module('app', ['ui.router','ngMessages']).config(['$stateProvider', '$ur
             url: 'edit',
             views: {
                 'main@':{
-                    templateUrl: TMP_PATH + 'character-sheets/edit/sheet.html',
+                    templateUrl: TMP_PATH + 'character-sheets/generate/sheet.html',
                     controller: 'editCharacterSheetController as editController'
                 }
             }
