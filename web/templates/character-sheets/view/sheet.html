@@ -38,7 +38,12 @@
     <div class="form-group">
         <label class="col-sm-4 control-label">Abilities</label>
         <div class="col-sm-7">
-            <span class="form-control" style="height: 80px; overflow-y: auto; text-align: left;">{{formData.character_abilities}}</span>
+            <!--<span class="form-control" style="height: 80px; overflow-y: auto; text-align: left;">{{formData.character_abilities}}</span>-->
+            <select ng-options="ability as ability for ability in abilities"
+                    ng-model="selectedAbility"
+                    multiple="false"
+                    style="width:100%;">
+            </select>
         </div>
     </div>
     <div class="form-group">

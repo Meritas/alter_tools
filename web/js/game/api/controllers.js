@@ -8,26 +8,17 @@ angular.module('app').controller('indexController', ['$scope','$http',
 angular.module('app').controller('viewCharacterSheetController', ['$scope','$http','$location',
     function($scope, $http, $location){
         var self = this;
-
-        $scope.classesList = {
-            1:  'Human',
-            2:  'Regenerator',
-            3:  'Aberrant',
-            4:  'Magician',
-            5:  'Alchemist',
-            6:  'Exorcist',
-            7:  'Ki-Fighter',
-            8:  '???',
-            9:  'Hybrid',
-            10: 'Contractor'
-        };
+        
+        $scope.abilities = [];
 
         $scope.classes = objectToArray($scope.classesList);
 
         var getParams = $location.search();
 
         $http.requestAction('sheet/view', JSON.stringify({uid: getParams.uid}))
-            .success(function(data){
+            .success(function(data){console.log(data.character_abilities);
+                $scope.abilities = JSON.parse(data.character_abilities);
+                
                 $scope.formData = data;
             });
 
@@ -38,6 +29,9 @@ angular.module('app').controller('editCharacterSheetController', ['$scope','$htt
         var self = this;
 
         $scope.classesList = cloneObject(CLASSES_LIST);
+        
+        $scope.arrays = {};
+        $scope.abilities = [];
 
         $scope.response = '';
 
@@ -46,14 +40,29 @@ angular.module('app').controller('editCharacterSheetController', ['$scope','$htt
         $http.requestAction('sheet/view', JSON.stringify({uid: getParams.uid}))
             .success(function(data){
                 $scope.formData = data;
+                $scope.abilities = JSON.parse(data.character_abilities);
             });
+        
+        $scope.pushRow = function(arr, elem){
+            arr.push(elem);
+        };
+        
+        $scope.removeRow = function(arr, elem){
+            if(elem[0] === undefined) return;
+            var pos = arr.indexOf(elem[0]);
+            if(pos > -1){
+                arr.splice(pos, 1);
+            }
+        }
+
 
         $scope.formSubmit = function(){
             $scope.response = '';
-
+            
+            $scope.formData.character_abilities = JSON.stringify($scope.abilities);
+            
             $http.requestAction('sheet/update', JSON.stringify($scope.formData))
                 .success(function (data) {
-                    console.log($scope.formData);
                     $scope.response = data;
                 });
 
@@ -64,6 +73,21 @@ angular.module('app').controller('editCharacterSheetController', ['$scope','$htt
 angular.module('app').controller('generateCharacterSheetController', ['$scope','$http',
     function($scope , $http){
         var self = this;
+        
+        $scope.arrays = {};
+        $scope.abilities = [];
+        
+        $scope.pushRow = function(arr, elem){
+            arr.push(elem);
+        };
+        
+        $scope.removeRow = function(arr, elem){
+            if(elem[0] === undefined) return;
+            var pos = arr.indexOf(elem[0]);
+            if(pos > -1){
+                arr.splice(pos, 1);
+            }
+        }
 
         $scope.classesList = cloneObject(CLASSES_LIST);
 
@@ -71,8 +95,11 @@ angular.module('app').controller('generateCharacterSheetController', ['$scope','
 
         $scope.formSubmit = function() {
             console.log('Generating character...');
-
+            
+            $scope.formData.character_abilities = JSON.stringify($scope.abilities);
+            
             $scope.response = '';
+            console.log($scope.formData.character_abilities);
             $http.requestAction('sheet/generate', JSON.stringify($scope.formData))
                 .success(function(data){
                     $scope.response = data;

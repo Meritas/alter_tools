@@ -48,7 +48,14 @@
     <div class="form-group">
         <label for="character-abilitites-field" class="col-sm-4 control-label">Abilities</label>
         <div class="col-sm-3">
-            <textarea ng-model="formData.character_abilities" name="characterAbilities" id="character-abilities-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
+            <select ng-options="ability as ability for ability in abilities"
+                    ng-model="selectedAbility"
+                    multiple="false"
+                    style="width:100%;">
+            </select>
+            <input ng-model="newAbility" class="form-control">
+            <input type="button" value="Add Ability" ng-click="pushRow(abilities, newAbility)" class="form-control" style="background-color:green; color: white;">
+            <input type="button" value="Remove Ability" ng-click="removeRow(abilities, selectedAbility)" class="form-control" style="background-color:gray; color: white;">
         </div>
     </div>
     <div class="form-group">
@@ -96,7 +103,7 @@
     <div class="form-group">
         <label for="money-field" class="col-sm-4 control-label">Money</label>
         <div class="col-sm-3">
-            <textarea ng-model="formData.character_abilities" name="characterAbilities" id="character-abilities-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
+            <textarea ng-model="formData.character_money" name="characterMOney" id="character-money-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
     </div>
     <div class="form-group">
