@@ -33,15 +33,32 @@ angular.module('app').controller('viewCharacterSheetController', ['$scope','$htt
 
     }]);
 
-angular.module('app').controller('editCharacterSheetController', ['$scope','$http',
-    function($scope , $http){
+angular.module('app').controller('editCharacterSheetController', ['$scope','$http','$location',
+    function($scope, $http, $location){
         var self = this;
 
+        $scope.classesList = cloneObject(CLASSES_LIST);
+
+        $scope.response = '';
+
+        var getParams = $location.search();
+
+        $http.requestAction('sheet/view', JSON.stringify({uid: getParams.uid}))
+            .success(function(data){
+                $scope.formData = data;
+            });
+
         $scope.formSubmit = function(){
-            $http.requestAction('sheet/update', JSON.stringify($scope.formData));
+            $scope.response = '';
+
+            $http.requestAction('sheet/update', JSON.stringify($scope.formData))
+                .success(function (data) {
+                    console.log($scope.formData);
+                    $scope.response = data;
+                });
 
             console.log('Form submitted');
-        }
+        };
     }]);
 
 angular.module('app').controller('generateCharacterSheetController', ['$scope','$http',
@@ -55,11 +72,13 @@ angular.module('app').controller('generateCharacterSheetController', ['$scope','
         $scope.formSubmit = function() {
             console.log('Generating character...');
 
+            $scope.response = '';
             $http.requestAction('sheet/generate', JSON.stringify($scope.formData))
                 .success(function(data){
                     $scope.response = data;
                 });
-        }
+        };
+
     }]);
 
 angular.module('app').controller('listCharacterSheetsController', ['$scope','$http',
