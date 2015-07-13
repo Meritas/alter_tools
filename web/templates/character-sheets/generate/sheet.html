@@ -42,13 +42,13 @@
     <div class="form-group">
         <label for="character-skills-field" class="col-sm-4 control-label">Skills</label>
         <div class="col-sm-3">
-            <input type="text" ng-model="formData.character_skills" name="characterSkills" id="character-skills-field" class="form-control">
+            <textarea ng-model="formData.character_skills" name="characterSkills" id="character-skills-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
     </div>
     <div class="form-group">
         <label for="character-abilitites-field" class="col-sm-4 control-label">Abilities</label>
         <div class="col-sm-3">
-            <input type="text" ng-model="formData.character_abilities" name="characterAbilities" id="character-abilitites-field" class="form-control">
+            <textarea ng-model="formData.character_abilities" name="characterAbilities" id="character-abilities-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
     </div>
     <div class="form-group">
@@ -96,22 +96,21 @@
     <div class="form-group">
         <label for="money-field" class="col-sm-4 control-label">Money</label>
         <div class="col-sm-3">
-            <input type="text" ng-model="formData.character_money" name="characterMoney" id="money-field" class="form-control">
+            <textarea ng-model="formData.character_abilities" name="characterAbilities" id="character-abilities-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
     </div>
     <div class="form-group">
         <label for="inventory-field" class="col-sm-4 control-label">Inventory</label>
         <div class="col-sm-3">
-            <input type="text" ng-model="formData.character_inventory" name="characterInventory" id="inventory-field" class="form-control">
+            <textarea ng-model="formData.character_inventory" name="characterInventory" id="character-inventory-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
     </div>
     <div class="form-group">
         <label for="info-field" class="col-sm-4 control-label">Information</label>
         <div class="col-sm-3">
-            <input type="text" ng-model="formData.character_info" name="characterInfo" id="info-field" class="form-control">
+            <textarea ng-model="formData.character_info" name="characterInfo" id="character-info-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
     </div>
-
     <div class="form-group" >
         <div class="col-sm-offset-4 col-sm-3">
             <button type="submit" class="btn btn-default">Generate</button>
