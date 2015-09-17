@@ -8,5 +8,6 @@ var CLASSES_LIST = {
     7:  'Ki-Fighter',
     8:  '???',
     9:  'Hybrid',
-    10: 'Contractor'
+    10: 'Contractor',
+    11: 'Spirit'
 };

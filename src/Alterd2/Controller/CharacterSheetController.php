@@ -53,7 +53,6 @@ class CharacterSheetController extends Controller {
         $characterSheet->setCharacterAbilities($postData['character_abilities']);
         $characterSheet->setCharacterStr($postData['character_str']);
         $characterSheet->setCharacterAgi($postData['character_agi']);
-        $characterSheet->setCharacterInt($postData['character_int']);
         $characterSheet->setCharacterSpd($postData['character_spd']);
         $characterSheet->setCharacterWp($postData['character_wp']);
         $characterSheet->setCharacterExp($postData['character_experience']);

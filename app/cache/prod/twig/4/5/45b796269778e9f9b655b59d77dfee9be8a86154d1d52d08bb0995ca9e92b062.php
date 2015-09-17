@@ -40,7 +40,7 @@ class __TwigTemplate_45b796269778e9f9b655b59d77dfee9be8a86154d1d52d08bb0995ca9e9
         // line 15
         echo "    ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 24
+        // line 25
         echo "    </body>
 </html>
 ";
@@ -80,6 +80,7 @@ class __TwigTemplate_45b796269778e9f9b655b59d77dfee9be8a86154d1d52d08bb0995ca9e9
         <script src=\"js/game/api/application.js\"></script>
         <script src=\"js/game/api/controllers.js\"></script>
         <script src=\"js/game/api/directives.js\"></script>
+        <script src=\"js/game/api/constants.js\"></script>
     ";
     }
 
@@ -90,6 +91,6 @@ class __TwigTemplate_45b796269778e9f9b655b59d77dfee9be8a86154d1d52d08bb0995ca9e9
 
     public function getDebugInfo()
     {
-        return array (  76 => 16,  73 => 15,  68 => 13,  65 => 12,  59 => 7,  56 => 6,  50 => 5,  44 => 24,  41 => 15,  39 => 12,  35 => 10,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  76 => 16,  73 => 15,  68 => 13,  65 => 12,  59 => 7,  56 => 6,  50 => 5,  44 => 25,  41 => 15,  39 => 12,  35 => 10,  33 => 6,  29 => 5,  23 => 1,);
     }
 }

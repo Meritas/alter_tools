@@ -88,12 +88,6 @@ class CharacterSheet
      * @ORM\Column(type="integer")
      */
     private $characterAgi;
-    
-    /**
-     * @var integer
-     * @ORM\Column(type="integer")
-     */
-    private $characterInt;
 
     /**
      * @var integer
@@ -382,7 +376,6 @@ class CharacterSheet
             'character_race'=>          $this->characterRace,
             'character_str'=>           $this->characterStr,
             'character_agi'=>           $this->characterAgi,
-            'character_int'=>           $this->characterInt,
             'character_spd'=>           $this->characterSpd,
             'character_wp'=>            $this->characterWp,
             'character_skills'=>        $this->characterSkills,
@@ -578,28 +571,5 @@ class CharacterSheet
     public function getCharacterExp()
     {
         return $this->characterExp;
-    }
-
-    /**
-     * Set characterInt
-     *
-     * @param integer $characterInt
-     * @return CharacterSheet
-     */
-    public function setCharacterInt($characterInt)
-    {
-        $this->characterInt = $characterInt;
-
-        return $this;
-    }
-
-    /**
-     * Get characterInt
-     *
-     * @return integer 
-     */
-    public function getCharacterInt()
-    {
-        return $this->characterInt;
     }
 }
