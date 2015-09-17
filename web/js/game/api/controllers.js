@@ -11,7 +11,7 @@ angular.module('app').controller('viewCharacterSheetController', ['$scope','$htt
         
         $scope.abilities = [];
 
-        $scope.classes = objectToArray($scope.classesList);
+        $scope.classesList = CLASSES_LIST;
 
         var getParams = $location.search();
 
@@ -39,7 +39,11 @@ angular.module('app').controller('editCharacterSheetController', ['$scope','$htt
 
         $http.requestAction('sheet/view', JSON.stringify({uid: getParams.uid}))
             .success(function(data){
-                $scope.formData = data;
+                $scope.formData = data; console.log(data);
+
+                //Mandatory type-casting
+                $scope.formData.character_race = $scope.formData.character_race + '';
+
                 $scope.abilities = JSON.parse(data.character_abilities);
             });
         
@@ -53,7 +57,7 @@ angular.module('app').controller('editCharacterSheetController', ['$scope','$htt
             if(pos > -1){
                 arr.splice(pos, 1);
             }
-        }
+        };
 
 
         $scope.formSubmit = function(){
@@ -87,7 +91,7 @@ angular.module('app').controller('generateCharacterSheetController', ['$scope','
             if(pos > -1){
                 arr.splice(pos, 1);
             }
-        }
+        };
 
         $scope.classesList = cloneObject(CLASSES_LIST);
 

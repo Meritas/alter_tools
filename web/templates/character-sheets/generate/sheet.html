@@ -31,6 +31,7 @@
             class="form-control text-center">
 
             </select>
+            {{formData.character_race}}
         </div>
     </div>
     <div class="form-group">
@@ -71,7 +72,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="int-field" class="col-sm-4 control-label">Inteligence</label>
+        <label for="int-field" class="col-sm-4 control-label">Intelligence</label>
         <div class="col-sm-3">
             <input type="text" ng-model="formData.character_int" name="characterInt" id="int-field" class="form-control">
         </div>
@@ -107,19 +108,19 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="money-field" class="col-sm-4 control-label">Money</label>
+        <label for="character-money-field" class="col-sm-4 control-label">Money</label>
         <div class="col-sm-3">
-            <textarea ng-model="formData.character_money" name="characterMOney" id="character-money-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
+            <textarea ng-model="formData.character_money" name="characterMoney" id="character-money-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
     </div>
     <div class="form-group">
-        <label for="inventory-field" class="col-sm-4 control-label">Inventory</label>
+        <label for="character-inventory-field" class="col-sm-4 control-label">Inventory</label>
         <div class="col-sm-3">
             <textarea ng-model="formData.character_inventory" name="characterInventory" id="character-inventory-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
     </div>
     <div class="form-group">
-        <label for="info-field" class="col-sm-4 control-label">Information</label>
+        <label for="character-info-field" class="col-sm-4 control-label">Information</label>
         <div class="col-sm-3">
             <textarea ng-model="formData.character_info" name="characterInfo" id="character-info-field" class="form-control" style="height: 80px; overflow-y: auto; text-align: left;"></textarea>
         </div>
@@ -130,6 +131,5 @@
         </div>
     </div>
 </form>
-
 
 <h3>Response:</h3> <h4>{{response}}</h4>
