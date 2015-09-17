@@ -90,54 +90,37 @@ class CharacterSheetController extends Controller {
     }
 
     public function updateAction(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('AppBundle:Product')->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AlterdBundle:CharacterSheet');
+
+        $product->setName('New product name!');
+        $em->flush();
+
+        return $this->redirectToRoute('homepage');
+
+
+
+
         if($request->getMethod() == 'POST'){
 
             $postData = json_decode($request->request->get('post'), true);
-
-            $characterSheetRepository = $this->getDoctrine()
-                ->getRepository('AlterdBundle:CharacterSheet');
-
-            $characterSheet = $characterSheetRepository->findOneByUid($postData['uid']);
-
-            if (!$characterSheet) {
-                throw $this->createNotFoundException(
-                    'No product found for id '.$postData['uid']
-                );
-            }
-
-
-            //Fields to update
-            $characterSheet->setCharacterName($postData['character_name']);
-            $characterSheet->setCharacterHp($postData['character_hp']);
-            $characterSheet->setCharacterEn($postData['character_en']);
-            $characterSheet->setCharacterRace($postData['character_race']);
-            $characterSheet->setCharacterLevel($postData['character_level']);
-            $characterSheet->setCharacterSkillPoints($postData['character_skill_points']);
-            $characterSheet->setCharacterStatPoints($postData['character_stat_points']);
-            $characterSheet->setCharacterSkills($postData['character_skills']);
-            $characterSheet->setCharacterAbilities($postData['character_abilities']);
-            $characterSheet->setCharacterStr($postData['character_str']);
-            $characterSheet->setCharacterAgi($postData['character_agi']);
-            $characterSheet->setCharacterInt($postData['character_int']);
-            $characterSheet->setCharacterSpd($postData['character_spd']);
-            $characterSheet->setCharacterWp($postData['character_wp']);
-            $characterSheet->setCharacterExp($postData['character_experience']);
-            $characterSheet->setCharacterMoney($postData['character_money']);
-            $characterSheet->setCharacterInventory($postData['character_inventory']);
-            $characterSheet->setCharacterInfo($postData['character_info']);
-
-
-            //Saving record...
-            $em = $this->getDoctrine()->getManager();
-
-            $em->persist($characterSheet);
-            $em->flush();
 
             return new JsonResponse($postData);
         }
         else{
             return new Response('No data');
         }
+
 
     }
 

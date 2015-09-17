@@ -21,3 +21,11 @@ generate_sheet:
 view_sheet:
     pattern:  /sheet/view
     defaults: { _controller: AlterdBundle:CharacterSheet:view }
+
+list_skill:
+    pattern:  /skills/list
+    defaults: { _controller: AlterdBundle:Skills:list }
+
+add_skill:
+    pattern:  /skills/add
+    defaults: { _controller: AlterdBundle:Skills:add }

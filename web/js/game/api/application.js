@@ -62,6 +62,24 @@ angular.module('app', ['ui.router','ngMessages']).config(['$stateProvider', '$ur
                     controller: 'listCharacterSheetsController as listController'
                 }
             }
+        }).
+        state('index.skills', {
+            url: 'skills',
+            views: {
+                'main@':{
+                    templateUrl: TMP_PATH + 'skills/list.html',
+                    controller: 'skillsListController as listController'
+                }
+            }
+        }).
+        state('index.skills.add', {
+            url: '/add',
+            views: {
+                'main@':{
+                    templateUrl: TMP_PATH + 'skills/add.html',
+                    controller: 'skillsAddController as addController'
+                }
+            }
         })
 
         /*state('index.registration', {
